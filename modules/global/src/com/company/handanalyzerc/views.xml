@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.handanalyzerc.entity.Game"
+          extends="_local"
+          name="game-view">
+        <property name="actions"
+                  view="_minimal">
+            <property name="index"/>
+            <property name="game"
+                      view="_minimal"/>
+        </property>
+        <property name="players"
+                  view="_minimal">
+            <property name="stake"/>
+            <property name="position"/>
+            <property name="game"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="com.company.handanalyzerc.entity.Player"
+          extends="_local"
+          name="player-view">
+        <property name="game"
+                  view="_minimal">
+            <property name="gameId"/>
+        </property>
+    </view>
+    <view class="com.company.handanalyzerc.entity.PlayerAction"
+          extends="_local"
+          name="playerAction-view">
+        <property name="player"
+                  view="_minimal"/>
+        <property name="game"
+                  view="_minimal">
+            <property name="gameId"/>
+        </property>
+    </view>
+</views>

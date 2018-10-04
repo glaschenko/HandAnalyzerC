@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.handanalyzerc.web.player.PlayerBrowse"
+        focusComponent="playersTable"
+        lookupComponent="playersTable"
+        messagesPack="com.company.handanalyzerc.web.player">
+    <dsContext>
+        <groupDatasource id="playersDs"
+                         class="com.company.handanalyzerc.entity.Player"
+                         view="player-view">
+            <query>
+                <![CDATA[select e from handanalyzerc$Player e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="playersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="playersTable"
+                datasource="playersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="playersTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="nickname"/>
+                <column id="stake"/>
+                <column id="position"/>
+                <column id="game"/>
+            </columns>
+            <rows datasource="playersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="playersTable.create"/>
+                <button id="editBtn"
+                        action="playersTable.edit"/>
+                <button id="removeBtn"
+                        action="playersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

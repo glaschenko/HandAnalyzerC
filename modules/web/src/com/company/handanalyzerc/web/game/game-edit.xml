@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.handanalyzerc.web.game.GameEdit"
+        datasource="gameDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.handanalyzerc.web.game">
+    <dsContext>
+        <datasource id="gameDs"
+                    class="com.company.handanalyzerc.entity.Game"
+                    view="game-view">
+            <collectionDatasource id="actionsDs"
+                                  property="actions"/>
+            <collectionDatasource id="playersDs"
+                                  property="players"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="gameDs">
+            <column width="250px">
+                <field property="gameId"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="playersBox"
+                  caption="msg://com.company.handanalyzerc.entity/Game.players">
+            <table id="playersTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="nickname"/>
+                    <column id="stake"/>
+                    <column id="position"/>
+                    <column id="game"/>
+                </columns>
+                <rows datasource="playersDs"/>
+                <buttonsPanel>
+                    <button action="playersTable.create"/>
+                    <button action="playersTable.edit"/>
+                    <button action="playersTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <groupBox id="actionsBox"
+                  caption="msg://com.company.handanalyzerc.entity/Game.actions">
+            <table id="actionsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="player"/>
+                    <column id="actionType"/>
+                    <column id="size"/>
+                    <column id="index"/>
+                    <column id="game"/>
+                </columns>
+                <rows datasource="actionsDs"/>
+                <buttonsPanel>
+                    <button action="actionsTable.create"/>
+                    <button action="actionsTable.edit"/>
+                    <button action="actionsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

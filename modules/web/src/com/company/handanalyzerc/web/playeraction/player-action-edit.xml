@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.handanalyzerc.web.playeraction.PlayerActionEdit"
+        datasource="playerActionDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.handanalyzerc.web.playeraction">
+    <dsContext>
+        <datasource id="playerActionDs"
+                    class="com.company.handanalyzerc.entity.PlayerAction"
+                    view="playerAction-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="playerActionDs">
+            <column width="250px">
+                <field property="index"/>
+                <field property="actionType"/>
+                <field property="size"/>
+                <field property="player"/>
+                <field property="game"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

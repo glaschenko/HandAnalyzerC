@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="handanalyzerc$Game.browse"
+            template="com/company/handanalyzerc/web/game/game-browse.xml"/>
+    <screen id="handanalyzerc$Game.edit"
+            template="com/company/handanalyzerc/web/game/game-edit.xml"/>
+    <screen id="handanalyzerc$Player.browse"
+            template="com/company/handanalyzerc/web/player/player-browse.xml"/>
+    <screen id="handanalyzerc$Player.edit"
+            template="com/company/handanalyzerc/web/player/player-edit.xml"/>
+    <screen id="handanalyzerc$PlayerAction.browse"
+            template="com/company/handanalyzerc/web/playeraction/player-action-browse.xml"/>
+    <screen id="handanalyzerc$PlayerAction.edit"
+            template="com/company/handanalyzerc/web/playeraction/player-action-edit.xml"/>
+</screen-config>
